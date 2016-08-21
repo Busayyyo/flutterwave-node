@@ -36,11 +36,60 @@ flutterwave.Account.validate({
 }, callback);
 ```
 
+## Recurrent Transactions
+
 ```
-//Resends OTP for a given account transaction
-flutterwave.Account.resendOtp({
-	'validateoption':'SMS',
-	'trxref':'FLW00291105'
+//Initiate (For setting up a bank account for recurrent payment)
+flutterwave.Account.initiateRecurrentPayment('4884993849', callback);
+
+//Example success response
+{
+  "data": {
+    "responseCode": "00",
+    "responseMessage": "Successful, Pending OTP Validation",
+    "transactionReference": "FLWBVN-1452847433079228"
+  },
+  "status": "success"
+}
+```
+
+```
+//Validate - Usually called after `initiateRecurrentPayment` (For validating a bank account been setup for recurrent payment)
+flutterwave.Account.validateRecurrentAccount({ 
+  'otp':'88839',
+  'reference':'FLWBVN-1452847433079228',
+  'billingamount':'6500',
+  'debitnarration':'SMILE SUBSCRIPTION'
 }, callback);
 
+//Example success response
+{
+  "data": {
+    "transactionreference ": "FLWRECUR-135677633",
+    "responseCode": "00",
+    "accountToken": "qRyPWB60dR63t8XDc97aEg",
+    "responseDescription": "Successfully completed"
+  },
+  "status": "success"
+}
+```
+
+
+```
+//Charge (For charging a bank account that has been setup for recurrent payment)
+flutterwave.Account.chargeRecurrentAccount({  
+  'accountToken':'qRyPWB60dR63t8XDc97aEg',
+  'billingamount':'6500',
+  'debitnarration':'SMILE SUBSCRIPTION'
+}, callback);
+
+//Example success response
+{
+  "data": {
+    "transactionreference ": "FLWRECUR-135677633",
+    "responseCode": "00",
+    "responseDescription": "Successfully completed"
+  },
+  "status": "success"
+}
 ```
