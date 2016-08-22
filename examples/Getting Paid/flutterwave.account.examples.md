@@ -56,6 +56,7 @@ flutterwave.Account.initiateRecurrentPayment('4884993849', callback);
 ```
 //Validate - Usually called after `initiateRecurrentPayment` (For validating a bank account been setup for recurrent payment)
 flutterwave.Account.validateRecurrentAccount({ 
+  'accountNumber':'8399489',
   'otp':'88839',
   'reference':'FLWBVN-1452847433079228',
   'billingamount':'6500',
