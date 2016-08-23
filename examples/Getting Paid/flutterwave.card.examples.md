@@ -15,7 +15,7 @@ flutterwave.Card.tokenize
     ( 
         {
             'validateoption':'SMS|VOICE',
-            'authmodel':'PIN | BVN | RANDOM_DEBIT | VBVSECURECODE | NOAUT',
+            'authmodel':'PIN | BVN | RANDOM_DEBIT | VBVSECURECODE | NOAUTH',
             "pin": "(Optional:Only needed where authmodel is PIN)",
             "bvn": "(Optional:Only needed where authmodel is BVN)",
             'cardno':'83994899',
@@ -48,7 +48,7 @@ flutterwave.Card.charge
     ( 
         {
             "amount": "46738",
-            "authmodel": "PIN | BVN | RANDOM_DEBIT | VBVSECURECODE | NOAUT",
+            "authmodel": "PIN | BVN | RANDOM_DEBIT | VBVSECURECODE | NOAUTH",
             "cardno": "9934889489",
             "currency": "NGN",
             "custid": "849389",
