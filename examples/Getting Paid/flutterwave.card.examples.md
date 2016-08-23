@@ -14,8 +14,10 @@ var flutterwave = new Flutterwave("YOUR_API_KEY","YOUR_MERCHANT_KEY");
 flutterwave.Card.tokenize
     ( 
         {
-            'validateoption':'SMS',
-            'authmodel':'NOAUTH',
+            'validateoption':'SMS|VOICE',
+            'authmodel':'PIN | BVN | RANDOM_DEBIT | VBVSECURECODE | NOAUT',
+            "pin": "(Optional:Only needed where authmodel is PIN)",
+            "bvn": "(Optional:Only needed where authmodel is BVN)",
             'cardno':'83994899',
             'cvv':'434',
             'expirymonth':'05',
@@ -46,12 +48,14 @@ flutterwave.Card.charge
     ( 
         {
             "amount": "46738",
-            "authmodel": "pin",
+            "authmodel": "PIN | BVN | RANDOM_DEBIT | VBVSECURECODE | NOAUT",
             "cardno": "9934889489",
             "currency": "NGN",
             "custid": "849389",
             "cvv": "433", 
             "expirymonth": "09",
+            "pin": "(Optional:Only needed where authmodel is PIN)",
+            "bvn": "(Optional:Only needed where authmodel is BVN)",
             "expiryyear": "10", 
             "narration": "somto masombe",
             "responseurl": "http://valuex.com"
