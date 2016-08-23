@@ -15,8 +15,7 @@ flutterwave.Card.tokenize
     ( 
         {
             'validateoption':'SMS|VOICE',
-            'authmodel':'PIN | BVN | RANDOM_DEBIT | VBVSECURECODE | NOAUTH',
-            "pin": "(Optional:Only needed where authmodel is PIN)",
+            'authmodel':'NOAUTH', /*Only NOAUTH and BVN are accepted*/ 
             "bvn": "(Optional:Only needed where authmodel is BVN)",
             'cardno':'83994899',
             'cvv':'434',
