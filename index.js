@@ -11,14 +11,15 @@ var bin      = require('./lib/flw.bin');
 var Flutterwave = function (merchant_key, merchant_secret)
 {
 
-	var flwbase   = new base(merchant_key, merchant_secret);
-	this.IP       = new ip(flwbase); 
-	this.BVN      = new bvn(flwbase);
-	this.Bank     = new bank(flwbase);
-	this.Card     = new card(flwbase);
-	this.Account  = new account(flwbase);
-	this.Disburse = new disburse(flwbase);
-	this.BIN      = new bin(flwbase);
+	var flwbase      = new base(merchant_key, merchant_secret);
+	this.IP          = new ip(flwbase); 
+	this.BVN         = new bvn(flwbase);
+	this.Bank        = new bank(flwbase);
+	this.Card        = new card(flwbase);
+	this.Account     = new account(flwbase);
+	this.Disburse    = new disburse(flwbase);
+	this.BIN         = new bin(flwbase);
+	this.decryptText = flwbase.decryptText;
 
 } 
 

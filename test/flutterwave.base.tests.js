@@ -49,6 +49,11 @@ describe('#FlutterwaveBaseTest', function () {
 
 	}); 
 
+	it('Should Decrypt "PjBSczoWdA4=" using the key "Tk_ksodk" and return "SMS"', function ()
+	{
+		var flwbase = new flwBase(83948, 98898);
+		expect(flwbase.decryptText("PjBSczoWdA4=", "Tk_ksodk")).to.equal("SMS");
+	});
 
 	it('Should return with a 404', function (done) {
 
