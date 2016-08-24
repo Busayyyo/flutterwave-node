@@ -39,9 +39,9 @@ describe('#FlutterwaveBVNTest', function () {
 		this.timeout(500000);
 	    var flutterwavebase = new flwBase('tk_NabYp2XjZ6G9WwdFruzK','tk_tdyrSMQo8a');
 		var flutterwavebvn  = new flwBvn(flutterwavebase); 
-    	flutterwavebvn.verify('SMS', '22254824829', function (err, res, body) { 
+    	flutterwavebvn.verify('SMS', '89999948', function (err, res, body) { 
     		expect(res.statusCode == 200).to.equal(true);
-    		expect(body.data.responseMessage).to.equal('Successful, pending OTP validation');
+    		expect(body.data.responseMessage).to.equal('Invalid BVN');
     		done();
     	});
 	   
