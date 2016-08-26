@@ -12,7 +12,7 @@ describe('#FlutterwaveCardTest', function () {
 	    	flutterwavecard.charge({}, function () {});
 	    }
 	    expect(testCardVerify).to.throw('amount is required');
-	});  
+	});
 
 
 	it('Should get 200 http response code and response body should have property data', function (done) { 
