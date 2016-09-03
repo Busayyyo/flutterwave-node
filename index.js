@@ -6,6 +6,7 @@ var card     = require('./lib/flw.card');
 var account  = require('./lib/flw.account');
 var disburse = require('./lib/flw.disburse');
 var bin      = require('./lib/flw.bin');
+var ach      = require('./lib/flw.ach');
 
 
 var Flutterwave = function (merchant_key, merchant_secret)
@@ -19,6 +20,7 @@ var Flutterwave = function (merchant_key, merchant_secret)
 	this.Account     = new account(flwbase);
 	this.Disburse    = new disburse(flwbase);
 	this.BIN         = new bin(flwbase);
+	this.ACH         = new ach(flwbase);
 	this.decryptText = flwbase.decryptText;
 
 } 
