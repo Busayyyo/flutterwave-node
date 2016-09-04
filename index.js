@@ -21,7 +21,7 @@ var Flutterwave = function (merchant_key, merchant_secret)
 	this.Disburse    = new disburse(flwbase);
 	this.BIN         = new bin(flwbase);
 	this.ACH         = new ach(flwbase);
-	this.decryptText = flwbase.decryptText;
+	this.decryptText = flwbase.decryptText(merchant_key);
 
 } 
 
