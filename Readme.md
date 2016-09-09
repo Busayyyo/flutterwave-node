@@ -32,7 +32,7 @@ If nothing is passed, the default staging url will be use when making the calls.
 ```
 var flutterwave = new Flutterwave('tk_ueiruriruriruriru', 'tk_tueheue'); //Base url is http://staging1flutterwave.co:8080/pwc/rest
 
-var flutterwave = new Flutterwave('tk_ueiruriruriruriru', 'tk_tueheue', true); //Base url is https://prod1flutterwave.co:8181
+var flutterwave = new Flutterwave('tk_ueiruriruriruriru', 'tk_tueheue', true); //Base url is https://prod1flutterwave.co:8181/pwc/rest
 
 var flutterwave = new Flutterwave('tk_ueiruriruriruriru', 'tk_tueheue', "https://someotherurl"); //Base url is https://someotherurl
 ```
