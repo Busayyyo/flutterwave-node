@@ -23,7 +23,21 @@ For more information on the services listed above, visit the [Flutterwave DEV we
 ```
 var Flutterwave = require('flutterwave');
 
-var flutterwave = new Flutterwave(API_KEY, MERCHANT_KEY);
+var flutterwave = new Flutterwave(API_KEY, MERCHANT_KEY, BASE_URL_OR_PRODUCTION_FLAG);
+```
+
+If you pass true as the value for BASE_URL_OR_PRODUCTION_FLAG, the library will use the production url as the base for all calls. Otherwise it will use any url value you pass as the base. 
+If nothing is passed, the default staging url will be use when making the calls.
+
+```
+var flutterwave = new Flutterwave('tk_ueiruriruriruriru', 'tk_tueheue'); //Base url is http://staging1flutterwave.co:8080/pwc/rest
+
+var flutterwave = new Flutterwave('tk_ueiruriruriruriru', 'tk_tueheue', true); //Base url is https://prod1flutterwave.co:8181
+
+var flutterwave = new Flutterwave('tk_ueiruriruriruriru', 'tk_tueheue', "https://someotherurl"); //Base url is https://someotherurl
+```
+
+```
 /*
 To call a flutterwave class (Code-name for API endpoint group) do :
 flutterwave.Class.method(param1..paramn, callback);

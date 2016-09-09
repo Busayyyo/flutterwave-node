@@ -9,10 +9,10 @@ var bin      = require('./lib/flw.bin');
 var ach      = require('./lib/flw.ach');
 
 
-var Flutterwave = function (merchant_key, merchant_secret)
+var Flutterwave = function (merchant_key, merchant_secret, base_url_or_production_flag)
 {
 
-	var flwbase      = new base(merchant_key, merchant_secret);
+	var flwbase      = new base(merchant_key, merchant_secret, base_url_or_production_flag);
 	this.IP          = new ip(flwbase); 
 	this.BVN         = new bvn(flwbase);
 	this.Bank        = new bank(flwbase);
