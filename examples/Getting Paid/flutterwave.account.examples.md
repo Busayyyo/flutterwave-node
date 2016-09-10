@@ -7,44 +7,6 @@ var flutterwave = new Flutterwave("YOUR_API_KEY","YOUR_MERCHANT_KEY");
 ## Call the Account methods
 
 ```
-//Charge an account
-flutterwave.Account.charge({
-  'accountNumber':'7839998873', 
-  'amountToPay':'4500',
-  'creditAccountNumber':'6757837463',
-  'narration':'SMILE DEBIT',
-  'txref':'MEANI',
-}, callback);
-
-//Example success response
-{
-  "data": {
-    "amount": null,
-    "transactionreference": null,
-    "responseMessage": "Successful, pending OTP validation",
-    "accountToken": "4rOPbaVkM70Nr6Z9587",
-    "responseCode": "00"
-  },
-  "status": "success"
-}
-```
-
-```
-//Validate an account charge
-/*
-After succesfully charging an account you can pass the accountToken from the charge response [see above] to validate
-*/
-flutterwave.Account.validate({
-	'amountToPay':'4000', 
-	'otp':'4884993849',
-	'trxref':'FLW00291105',
-	'accountToken':'MEANI'
-}, callback);
-```
-
-## Recurrent Transactions
-
-```
 //Initiate (For setting up a bank account for recurrent payment)
 flutterwave.Account.initiateRecurrentPayment('4884993849', callback);
 
