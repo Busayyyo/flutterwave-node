@@ -8,7 +8,13 @@ var flutterwave = new Flutterwave("YOUR_API_KEY","YOUR_MERCHANT_KEY");
 
 ```
 //Charge an account
-flutterwave.Account.charge('44449309', callback);
+flutterwave.Account.charge({
+  'accountNumber':'7839998873', 
+  'amountToPay':'4500',
+  'creditAccountNumber':'6757837463',
+  'narration':'SMILE DEBIT',
+  'txref':'MEANI',
+}, callback);
 
 //Example success response
 {
