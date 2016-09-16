@@ -23,7 +23,7 @@ For more information on the services listed above, visit the [Flutterwave DEV we
 ```
 var Flutterwave = require('flutterwave');
 
-var flutterwave = new Flutterwave(MERCHANT_KEY, API_KEY, BASE_URL_OR_PRODUCTION_FLAG);
+var flutterwave = new Flutterwave(API_KEY, MERCHANT_KEY, BASE_URL_OR_PRODUCTION_FLAG);
 ```
 
 If you pass true as the value for BASE_URL_OR_PRODUCTION_FLAG, the library will use the production url as the base for all calls. Otherwise it will use any url value you pass as the base. 
