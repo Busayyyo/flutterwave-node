@@ -87,4 +87,12 @@ describe('#FlutterwaveBaseTest', function () {
 
 	});
 
+	it('Should return a promise if callback is not provided', function() {
+		var flwbase = new flwBase(83948, 98898);
+		return flwbase.makeRequest('scribbled-crap', {method:'POST'})
+			.then(function(res, body) {
+				expect(res.statusCode).to.equal(404);
+			});
+	});
+
 });
