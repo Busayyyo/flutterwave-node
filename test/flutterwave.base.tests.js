@@ -52,7 +52,7 @@ describe('#FlutterwaveBaseTest', function () {
 	it('Should Decrypt "PjBSczoWdA4=" using the key "Tk_ksodk" and return "SMS"', function ()
 	{
 		var flwbase = new flwBase(83948, 98898);
-		expect(flwbase.decryptText("PjBSczoWdA4=", "Tk_ksodk")).to.equal("SMS");
+		expect(flwbase.decryptText("Tk_ksodk")("PjBSczoWdA4=")).to.equal("SMS");
 	});
 
 	it('Should return with a 404', function (done) {
@@ -85,6 +85,14 @@ describe('#FlutterwaveBaseTest', function () {
 			done();
 		});
 
+	});
+
+	it('Should return a promise if callback is not provided', function() {
+		var flwbase = new flwBase(83948, 98898);
+		return flwbase.makeRequest('scribbled-crap', {method:'POST'})
+			.then(function(res, body) {
+				expect(res.statusCode).to.equal(404);
+			});
 	});
 
 });
