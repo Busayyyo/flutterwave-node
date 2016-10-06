@@ -23,7 +23,7 @@ For more information on the services listed above, visit the [Flutterwave DEV we
 ```
 var Flutterwave = require('flutterwave');
 
-var flutterwave = new Flutterwave(API_KEY, MERCHANT_KEY, BASE_URL_OR_PRODUCTION_FLAG);
+var flutterwave = new Flutterwave(MERCHANT_KEY, API_KEY, BASE_URL_OR_PRODUCTION_FLAG);
 ```
 
 If you pass true as the value for BASE_URL_OR_PRODUCTION_FLAG, the library will use the production url as the base for all calls. Otherwise it will use any url value you pass as the base. 
@@ -75,3 +75,37 @@ As a rule of thumb, always put your flutterwave calls in a try block. The librar
 * Values are empty
 * Values are not in the expected format
 _See the [example](https://github.com/Flutterwave/flutterwave-node/tree/master/examples) directory for more usage information_
+
+### Response codes
+```
+00  Successful
+02  Needs card Validation
+RR  Transaction Failed. Detailed Message is included in response message
+7   Card Declined due to invalid card data
+RR-T2   
+XS0 Authorization Failed due to connectivity issues with the bank
+B02 Invalid BVN
+RR-51   Insufficient Funds
+RR-R3   CardToken is mandatory!
+RR-14   Invalid Card Number
+RR-55   Incorrect PIN
+R0  Transaction Failed due to connectivity issues with the bank
+RR-E42  Card Declined due to invalid card expiry
+RR-56   No Card Record
+RR-2    Card Declined
+RR-X04  Transaction Amount too low
+RR-15   Transaction error
+RR-7    Card Declined due to invalid card security code
+RR-57   Transaction not Permitted to Cardholder
+RR-04   Pick-up card
+RR-Z8   Payment Gateway currently does not accept your card type
+RR-91   Bank or switch network error
+EEE An unexpected error occurred!
+RR-E18  The service provider is unreachable at the moment, please try again later.
+RR-E19  An invalid response was received from remote host, see provider response code/message for details.
+RR-E19  An invalid response was received from remote host, please contact system administrator.
+RR-E32  JSON is badly formatted or it contains invalid character.
+RR-E42  Expiry Date cannot be empty
+RR-E57  The PIN contains an invalid character
+RR-EE4  Card Details could not be Retrieved!
+```
