@@ -46,7 +46,7 @@ flutterwave.Account.validateRecurrentAccount({
 
 ```
 //Charge (For charging a bank account that has been setup for recurrent payment)
-flutterwave.Account.chargeRecurrentAccount({  
+flutterwave.Account.chargeRecurrentAccount({
   'accountToken':'qRyPWB60dR63t8XDc97aEg',
   'billingamount':'6500',
   'debitnarration':'SMILE SUBSCRIPTION'
@@ -61,4 +61,82 @@ flutterwave.Account.chargeRecurrentAccount({
   },
   "status": "success"
 }
+```
+
+```
+//LinkAccount (For linking a bank payment account)
+flutterwave.Account.linkAccount({
+    'accountnumber':'0690000001'
+}, callback);
+
+//Example success response
+{
+ "data": {
+    "responsecode": "00",
+    "responsemessage": "Successful, Pending OTP Validation",
+    "uniquereference": G456789022222
+  },
+  "status": "success"
+}
+```
+
+```
+// Validate Account Linking (For validating a bank account linking)
+flutterwave.Account.validateAccountLinking({
+    'otp':'12345',
+    'otptype':'PHONE_OTP',
+    'relatedreference':'G456789022222'
+}, callback);
+
+//Example success response
+{
+ "data": {
+    "responsecode": "00",
+    "responsemessage": "Successful, Pending OTP Validation",
+    "uniquereference": G456789022222
+  },
+  "status": "success"
+}
+```
+
+```
+// GetLinkAccount (For fetching a user's linked account)
+flutterwave.Account.getLinkedAccounts({}, callback);
+
+//Example success response
+{
+ "data": {
+    "responsecode": "00",
+    "responsemessage": "Successful, Pending OTP Validation",
+    "uniquereference": G456789022222
+  },
+  "status": "success"
+}
+```
+
+```
+// Send Payment (To send payment to a bank account)
+flutterwave.Account.sendPayment({
+    "accounttoken": "qRyPWB60dR63t8XDc97aEg",
+    "destbankcode": "044",
+    "uniquereference": "1234568901",
+    "country": "NIGERIA",
+    "currency": "NGN",
+    "transferamount": "100.00",
+    "narration": "Test Send Money",
+    "recipientname": "John Doe",
+    "sendername": "John Walker",
+    "recipientaccount": "0690000021"
+}, callback);
+
+//Example success response
+{
+  "data": {
+    "responsecode": "00",
+    "responsemessage": "Completed Successfully",
+    "uniquereference": "0921318712"
+  },
+  "status": "success"
+}
+
 ```
