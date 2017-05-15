@@ -7,6 +7,8 @@ var account  = require('./lib/flw.account');
 var disburse = require('./lib/flw.disburse');
 var bin      = require('./lib/flw.bin');
 var ach      = require('./lib/flw.ach');
+var ussd     = require('./lib/flw.ussd');
+var refund   = require('./lib/flw.refund');
 
 
 var Flutterwave = function (merchant_key, merchant_secret, base_url_or_production_flag)
@@ -21,6 +23,8 @@ var Flutterwave = function (merchant_key, merchant_secret, base_url_or_productio
 	this.Disburse    = new disburse(flwbase);
 	this.BIN         = new bin(flwbase);
 	this.ACH         = new ach(flwbase);
+	this.USSD        = new ussd(flwbase);
+	this.Refund      = new refund(flwbase);
 	this.decryptText = flwbase.decryptText(merchant_key);
 
 } 
